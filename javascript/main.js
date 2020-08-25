@@ -29,7 +29,7 @@ sr.submitClick();
 
 function clr(){
   localStorage.clear()
-  var sd = document.querySelector(".playlist");
+  var sd = document.querySelector("#pl");
   sd.innerHTML="";
 }
 
@@ -71,7 +71,7 @@ SoundCloudAPI.getTrack = function(inputValue){
       var img_div = document.createElement('img');
       img_div.classList.add("card","img","top");
       img_div.style="width:100%";
-      img_div.src = track.artwork_url || "sh.jpg";
+      img_div.src = track.artwork_url || "2.jpg";
       
       var cin = document.createElement('div');
       cin.classList.add("card","body");
@@ -105,9 +105,10 @@ SoundCloudAPI.getTrack = function(inputValue){
         auto_play: false
       }).then(function(embed){
         console.log('oEmbed response: ', embed);
-        var sd= document.querySelector(".playlist");
+        var sd= document.querySelector("#pl");
       
-        var bx = document.createElement("div");
+        var bx = document.createElement("a");
+        
         bx.innerHTML = embed.html;
       
         sd.insertBefore(bx, sd.firstChild);
@@ -118,5 +119,5 @@ SoundCloudAPI.getTrack = function(inputValue){
       });
     }
   
-    var sd = document.querySelector(".playlist");
+    var sd = document.querySelector("#pl");
     sd.innerHTML = localStorage.getItem("key");
