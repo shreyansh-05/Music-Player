@@ -12,7 +12,8 @@
 }
 
 iframe {
-    height: 200px;
+	height: 200px;
+	width: 33.33%;
 }
 .input-group {
     width: 50%;
