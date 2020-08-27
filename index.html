@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Dj Shukla</title>
+		<title>Dj17 :)</title>
   		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel='stylesheet' href='styles/main.css'>
+		<link rel="manifest" href="manifest.json">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -31,11 +32,9 @@
   			</div>  
 		</nav>
 		
+
 			
-			
-			
-			
-			<div class="container-fluid text-dark"  data-toggle="collapse" id="s" style="padding:60px;">
+			<div class="container-fluid text-dark" id="s" style="padding:60px;">
 				<div class="input-group">
 					<input type="text"  class="form-control" placeholder="Enter song name...">
 					<div class="input-group-append">
@@ -44,7 +43,7 @@
 					  </button>
 					</div>
 				</div>
-				<div class="search-results card-columns">
+				<div class="search-results row">
                 
 				</div>
 				
@@ -58,6 +57,18 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 		<script src="https://connect.soundcloud.com/sdk/sdk-3.3.2.js"></script>
 		<script src="javascript/main.js"></script>
+		<script>
+			if ('serviceWorker' in navigator) {
+			  console.log('CLIENT: service worker registration in progress.');
+			  navigator.serviceWorker.register('service-worker.js').then(function() {
+				console.log('CLIENT: service worker registration complete.');
+			  }, function() {
+				console.log('CLIENT: service worker registration failure.');
+			  });
+			} else {
+			  console.log('CLIENT: service worker is not supported.');
+			}
+			</script>
 		
 	</body>
 </html>

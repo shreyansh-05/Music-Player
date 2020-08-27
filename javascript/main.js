@@ -71,7 +71,7 @@ SoundCloudAPI.getTrack = function(inputValue){
       var img_div = document.createElement('img');
       img_div.classList.add("card","img","top");
       img_div.style="width:100%";
-      img_div.src = track.artwork_url || "2.jpg";
+      img_div.src = track.artwork_url || "b.png";
       
       var cin = document.createElement('div');
       cin.classList.add("card","body");
@@ -80,25 +80,69 @@ SoundCloudAPI.getTrack = function(inputValue){
       hd.classList.add("text");
       hd.innerHTML = '<a href="'+ track.permalink_url+'" target="_blank">' + track.title + "</a>";
     
-      var bt = document.createElement('a');
+      var bt = document.createElement('button');
       bt.classList.add("btn","primary");
-      bt.innerHTML="Add to playlist"
+      bt.innerHTML="+Add to playlist"
+
+      var bt2 = document.createElement('button');
+      bt2.classList.add("btn","primary");
+      bt2.innerHTML="Play";
+
     
       card.appendChild(img_div);
       card.appendChild(cin);
       cin.appendChild(hd);
       cin.appendChild(bt);
+      cin.appendChild(bt2);
     
       bt.addEventListener('click', function(){
         console.log("click");
     
         SoundCloudAPI.getEmbed(track.permalink_url);
       });
+      
+      bt2.addEventListener('click', function(){
+        console.log("click");
+          SC.stream('tracks/'+track.id).then(function(player){
+            if(bt2.innerHTML=="Play")
+            {
+              player.play();
+              bt2.innerHTML="Stop";
+            }
+              bt2.addEventListener('click', function(){
+                if(bt2.innerHTML=="Stop"){
+                  player.pause();
+                  bt2.innerHTML = "PLAY";
+                }
+                  bt2.addEventListener('click', function(){
+                    if(bt2.innerHTML=="PLAY")
+                    {
+                      player.play();
+                      bt2.innerHTML = "Pause";
+                    }
+                      bt2.addEventListener('click', function(){
+                        if(bt2.innerHTML=="Pause"){
+                          player.pause();
+                          bt2.innerHTML = "Add to playlist to play more";
+                        }
+                      });
+                    });
+          
+                  });
+                });
+
+        //SoundCloudAPI.playsong('tracks/'+track.id);
+        console.log(track);      
+      });
+    
       var searchResults = document.querySelector(".search-results");
       searchResults.appendChild(card);
       });
     }
+    
   
+  
+
     SoundCloudAPI.getEmbed = function(trackURL){
     
       SC.oEmbed(trackURL, {
