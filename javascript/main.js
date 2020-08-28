@@ -81,11 +81,13 @@ SoundCloudAPI.getTrack = function(inputValue){
       hd.innerHTML = '<a href="'+ track.permalink_url+'" target="_blank">' + track.title + "</a>";
     
       var bt = document.createElement('button');
-      bt.classList.add("btn","primary");
-      bt.innerHTML="+Add to playlist"
+      bt.classList.add("btn");
+      bt.style="background-color: mediumaquamarine;";
+      bt.innerHTML="+ Add to playlist";
 
       var bt2 = document.createElement('button');
-      bt2.classList.add("btn","primary");
+      bt2.classList.add("btn");
+      bt2.style="background-color: black; color:white;";
       bt2.innerHTML="Play";
 
     
