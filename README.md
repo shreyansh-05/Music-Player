@@ -1,4 +1,3 @@
-# 
 <h1>Music-Player :octocat:</h1>
 <h2>* Frontend - </h2>
 A music player using SoundCloud API.
