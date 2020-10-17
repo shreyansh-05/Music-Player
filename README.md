@@ -5,7 +5,7 @@ Technologies used are HTML, CSS and Javascipt. Data format for handling data dur
 You can ofcourse fork this project and add more animations such as scss and make it beautiful.:shipit:
 
 <h2>* PWA (Progessive Web App) - </h2>
-I have also added PWA feauture to this project. I thought of doing so as I consider PWA to be prominent technology emerging in the field of mobile app. This statement isin accordance to year 2020 ;).
+I have also added PWA feauture to this project. I thought of doing so as I consider PWA to be prominent technology emerging in the field of mobile app. This statement is in accordance to year 2020 ;).
 
 Check my project [here](https://shreyansh-05.github.io/Music-Player/)
 Happy exploring :)  
