@@ -1,6 +1,4 @@
 var sr = {};
-
-
 sr.enterPress = function() {
   
 	document.querySelector(".form-control").addEventListener('keypress', function( e ) {
