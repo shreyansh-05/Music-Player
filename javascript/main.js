@@ -12,7 +12,6 @@ sr.enterPress = function() {
 		}
 	});
 }
-
 sr.submitClick = function() {
   
 	document.querySelector("i").addEventListener('click', function( e ) {
